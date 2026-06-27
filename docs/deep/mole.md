@@ -6,6 +6,17 @@
 
 ![摩尔庄园后端架构图](../img/mole-architecture.svg)
 
+**配套保姆级图解**(点开看大图;总入口 [README 摩尔庄园图解区](../../README.md#-摩尔庄园--保姆级图解从快速上手到深度解析)):
+
+- 🧠 [思维导图](../img/mole-mindmap.svg) · 🏗️ [进程拓扑全景](../img/mole-topology.svg) · 🎮 [online 玩法地图](../img/mole-online-map.svg)
+- 💾 [数据层/分库分表](../img/mole-data-layer.svg) · 🔬 [请求时序(喂拉姆)](../img/mole-request-sequence.svg) · 📦 [内容数据地图](../img/mole-content-map.svg)
+
+![online 玩法地图](../img/mole-online-map.svg)
+
+![数据怎么存(分库分表)](../img/mole-data-layer.svg)
+
+![一次请求的一生(喂拉姆时序)](../img/mole-request-sequence.svg)
+
 ---
 
 ## 一图看懂:进程拓扑与一次玩法报文的真实流向
