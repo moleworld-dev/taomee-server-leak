@@ -1,6 +1,7 @@
 # 模块 common-tools · 淘米各游戏共用的运维/反作弊/代理工具集
 
 > 价值:★★  ·  游戏:基础设施(横跨摩尔庄园/赛尔号/功夫派/小花仙等全线)  ·  源码量:约 3 万行(C/C++ 计 29547 行,另含大量 PHP/Perl/Shell/conf)
+> 📖 深度功能解析(每个部分实际在干什么):[deep/common-tools.md](../deep/common-tools.md) · 彩蛋见 [easter-eggs.md](../easter-eggs.md)
 
 ## 是什么 / 在整套架构里的角色
 

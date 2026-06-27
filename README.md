@@ -2,6 +2,8 @@
 
 > 这是一份**纯文档层**:在不改动任何源码的前提下,为这份淘米老服务端源码加一层中文地图,方便挖宝、协议比对与学习开发。
 > 本项目最终目的:为 **摩尔庄园离线复活**(moleworld-server / MoleWorld-offline)提供参照。
+>
+> 🆕 **两个新增亮点**:① [**深度档案**](#8-深度档案每个部分实际在干什么) —— 逐模块讲清"每个部分实际在运行时干什么"(进程拓扑、调用流、关键函数);② [**🥚 工程师彩蛋**](docs/easter-eggs.md) —— 从源码里挖到的吐槽、玩笑、TODO、走马灯密码、`fuck_version_check` 之类的人味遗留。
 
 ---
 
@@ -75,9 +77,11 @@
 
 ### A. 我该从哪开始读?
 1. 先读本页 → [mole.md](docs/modules/mole.md)(摩尔庄园整体架构:flashpolicy→login→online→cache→dbsvr)。
-2. 再读 [协议专题 protocol.md](docs/protocol.md)(看懂 cmdid 怎么编码/路由)。
-3. 然后 [内容/数据专题 content-data.md](docs/content-data.md)(物品/地图/答题/活动数据在哪、什么格式)。
-4. 想编译/理解底层:[libtaomee.md](docs/modules/libtaomee.md) + [c.md](docs/modules/c.md)。
+2. 想知道某部分**实际在跑什么** → [深度档案 deep/mole.md](docs/deep/mole.md)(进程拓扑、调用流、"喂拉姆"端到端链路)。
+3. 再读 [协议专题 protocol.md](docs/protocol.md)(看懂 cmdid 怎么编码/路由)。
+4. 然后 [内容/数据专题 content-data.md](docs/content-data.md)(物品/地图/答题/活动数据在哪、什么格式)。
+5. 想编译/理解底层:[libtaomee.md](docs/modules/libtaomee.md) + [c.md](docs/modules/c.md)。
+6. 想轻松一下 → [🥚 工程师彩蛋](docs/easter-eggs.md)。
 
 ### B. 怎么查一条命令字(cmdid)?
 ```bash
@@ -132,8 +136,19 @@ grep -n '美誉' mole/dbsvr/include/proto.h        # 按中文注释找
 **专题**
 - [协议专题 · protocol.md](docs/protocol.md) —— cmdid 总表/分类、`NEED_UPDATE`/路由位机制、与 iOS 协议比对方法。
 - [内容/数据专题 · content-data.md](docs/content-data.md) —— conf XML 与 42 个 sql 的格式与可挖内容。
+- [🥚 工程师彩蛋 · easter-eggs.md](docs/easter-eggs.md) —— 全仓挖到的吐槽/玩笑/TODO/明文凭据(已脱敏)/GM 后门/ASCII 艺术等"人味遗留"。
 
-**模块文档**
+**模块文档(概览)**
 - 摩尔庄园系:[mole.md](docs/modules/mole.md) · [mole2.md](docs/modules/mole2.md)
 - 其它游戏:[gf.md(功夫派)](docs/modules/gf.md) · [monster.md(小怪兽)](docs/modules/monster.md) · [pea.md(赛尔号)](docs/modules/pea.md) · [boke.md(卜克)](docs/modules/boke.md)
 - 基础设施:[c.md](docs/modules/c.md) · [libtaomee.md](docs/modules/libtaomee.md) · [dbser.md](docs/modules/dbser.md) · [pic_server.md](docs/modules/pic_server.md) · [common-tools.md](docs/modules/common-tools.md) · [itl.md](docs/modules/itl.md)
+
+---
+
+## 8. 深度档案(每个部分实际在干什么)
+
+概览文档回答"是什么/值不值得挖";**深度档案**回答"它实际在运行时干什么"——逐进程/子目录拆解职责、调用流、关键函数(带源码行号),`mole`/`gf`/`mole2` 还追了**端到端调用流**(从 Flash 客户端到落 MySQL)。
+
+- 摩尔庄园系:[deep/mole.md](docs/deep/mole.md)(含"喂拉姆"全链路) · [deep/mole2.md](docs/deep/mole2.md)(七进程 + C↔Lua 怪物 AI + 跨服撮合)
+- 其它游戏:[deep/gf.md](docs/deep/gf.md)(实时动作战斗伤害公式 + BOSS AI 工厂) · [deep/monster.md](docs/deep/monster.md) · [deep/pea.md](docs/deep/pea.md) · [deep/boke.md](docs/deep/boke.md)
+- 基础设施:[deep/c.md](docs/deep/c.md)(net-io-server 回调生命周期) · [deep/libtaomee.md](docs/deep/libtaomee.md)(shmq/qdes) · [deep/dbser.md](docs/deep/dbser.md)(逐 `ROUTE_` 解读分库地图) · [deep/pic_server.md](docs/deep/pic_server.md) · [deep/common-tools.md](docs/deep/common-tools.md) · [deep/itl.md](docs/deep/itl.md)

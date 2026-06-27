@@ -1,6 +1,7 @@
 # 模块 pic_server · 淘米全平台图片服(上传/缩略图/存储/CDN 回源)
 
 > 价值:★★  ·  游戏:基础设施(全游戏共用,含摩尔庄园相册/头像)  ·  源码量:约 2.5 万行
+> 📖 深度功能解析(每个部分实际在干什么):[deep/pic_server.md](../deep/pic_server.md) · 彩蛋见 [easter-eggs.md](../easter-eggs.md)
 
 ## 是什么 / 在整套架构里的角色
 

@@ -1,6 +1,7 @@
 # 模块 libtaomee · 淘米内部框架库(Libtaomee C 版 + Libtaomee++ C++ 版)
 
 > 价值:★★  ·  游戏:基础设施(摩尔庄园/赛尔号/功夫派等所有页游共用)  ·  源码量:约 3.9 万行(libtaomee C 含内嵌 Lua ≈3 万行 + libtaomee++ ≈0.9 万行)
+> 📖 深度功能解析(每个部分实际在干什么):[deep/libtaomee.md](../deep/libtaomee.md) · 彩蛋见 [easter-eggs.md](../easter-eggs.md)
 
 本模块不是一个解压在仓库工作树里的目录,而是仓库根的**两个发布版 tar.gz**:
 

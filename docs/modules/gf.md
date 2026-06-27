@@ -1,6 +1,7 @@
 # 模块 gf · 功夫派(KungFu Pai)完整游戏服务端
 
 > 价值:★★★  ·  游戏:功夫派(KungFu Pai)  ·  源码量:约 22 万行(C/C++ 实测 220490 行,2016 文件)
+> 📖 深度功能解析(每个部分实际在干什么):[deep/gf.md](../deep/gf.md) · 彩蛋见 [easter-eggs.md](../easter-eggs.md)
 
 > ⚠️ **游戏名修正**:baseline 曾把本模块误标为"小花仙"。经实证为**功夫派(KungFu Pai)** —— 武侠/格斗题材 MMO。证据:货币叫"**功夫豆**"([gf/trade_svr/conf/items_nor.xml:837](../../gf/trade_svr/conf/items_nor.xml)),怪物体系是"**木人/木王/铜人**"([gf/battle_svr/conf/stage_easy/monsters.xml](../../gf/battle_svr/conf/stage_easy/monsters.xml)),问答配置直接写"功夫派里可以选几种角色?"([gf/gongfu_online/conf/puzzle.xml:123](../../gf/gongfu_online/conf/puzzle.xml))。全仓未见任何"小花仙"字样。
 
