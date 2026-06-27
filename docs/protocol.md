@@ -6,6 +6,8 @@
 
 业务对照(据淘米自有 gameid 字典 [common-tools/.../docs/gameid](../common-tools/linux/anticheat/trunk/docs/gameid)):`mole` = 摩尔庄园(id 1),`mole2` = 摩尔庄园2(id 8),`gf` = 功夫派(id 6,**非小花仙**),`pea` = 赛尔号(id 2),`monster` = 淘米小怪兽(id 13,**非赛尔号**),`boke` = 卜克 / POP 解密类(id 12)。所有服务都是给 **Flash 网页客户端**用的。
 
+![协议命令字与报文头](img/protocol-cmdid.svg)
+
 ---
 
 ## 0. 一句话总览
@@ -86,7 +88,7 @@ DB 层之外还有几个**不同结构**的头,对照 iOS 抓包时要分清自�
 
 客户端面向的"在线服务"(`mole/online`)还另有一套**业务事件命令字**(数值很小、十进制),例如学校吧事件,见 [mole/online/school_bar_cmd.h](../mole/online/school_bar_cmd.h):`LAHM_DIARY_CMD 1001`、`MOLE_LEVEL_UP_CMD 1002`、`TASK_FINI_CMD 1003`。这套和 DB 层的 `0xB469` 式命令字是**两个命名空间**,别混用。
 
-> 加密:在线服务里出现 DES 密钥 `#define DES_KEY ">ta:mee<"`(台服另有 `DES_GAME_SCORE_KEY`),见 [mole/online/proto.h#L15](../mole/online/proto.h#L15)。即客户端↔在线服务这一段可能对(部分)报文做 DES;而 online↔DB 的内网段通常明文。对照 iOS 抓包时这点很关键(见第 6 节)。
+> 加密:在线服务里出现 DES 密钥 `#define DES_KEY ">ta:mee<"`(台服另有 `DES_GAME_SCORE_KEY`),见 [mole/online/proto.h#L6](../mole/online/proto.h#L6)。即客户端↔在线服务这一段可能对(部分)报文做 DES;而 online↔DB 的内网段通常明文。对照 iOS 抓包时这点很关键(见第 6 节)。
 
 ---
 
