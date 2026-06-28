@@ -42,7 +42,7 @@ EXEC_MYSQL="mysql -uroot -pta0mee --skip-column-names -A"
 ```c
 #define DES_KEY ">ta:mee<"
 ```
-[mole/online/proto.h:6](../mole/online/proto.h#L6) · 摩尔庄园 Flash 客户端与在线服报文加密的核心,8 字节,"<taomee>" 的变形。功夫派 cache 服 [GS_KEY](../gf/cache_svr/cmdprocess.h#L24) 完全同款,印证全公司共用一套 session DES 体系。
+[mole/online/proto.h:15](../mole/online/proto.h#L15) · 摩尔庄园 Flash 客户端与在线服报文加密的核心,8 字节,"<taomee>" 的变形。功夫派 cache 服 [GS_KEY](../gf/cache_svr/cmdprocess.h#L24) 完全同款,印证全公司共用一套 session DES 体系。
 
 **6. 唯一一条外网真实邮箱口令(键盘对角线乱打)**
 
@@ -142,7 +142,7 @@ mail.SetPassword("[口令已隐去]");   // 原文是一串键盘对角线乱打
 | `EXEC_MYSQL="mysql -uroot -pta0mee ..."` | [show_records_range:17](../common-tools/linux/anticheat/trunk/query_ill/ref2/show_records_range#L17) | 万能口令 `ta0mee`,仓库出现 460+ 次,跨游戏复用 |
 | `db_pass monster@24` | [monster/.../db_server.conf:34](../monster/db-server/conf/db_server.conf#L34) | 小怪兽自成一派:口令=游戏名+机器尾号,暴露命名套路 |
 | `$pwd ="xcwen142857\n";` | [findcore_db_user_jim.pl:35](../common-tools/linux/tools/core_detect/findcore_db_user_jim.pl#L35) | "姓名+走马灯数 142857"的个人 SSH 口令,人味十足 |
-| `#define DES_KEY ">ta:mee<"` | [mole/online/proto.h:6](../mole/online/proto.h#L6) | 摩尔在线服 DES 主密钥,复活项目硬依赖 |
+| `#define DES_KEY ">ta:mee<"` | [mole/online/proto.h:15](../mole/online/proto.h#L15) | 摩尔在线服 DES 主密钥,复活项目硬依赖 |
 | `LOGIN_DES_KEY "!tA:mEv,"` | [Libtaomee-0.7.5.tar.gz](../Libtaomee-0.7.5.tar.gz) → `libtaomee/project/constants.h:38` | 框架级登录票据主 key,影响所有游戏登录(在打包的 tar.gz 内,行号实证) |
 | `const char VigWorker::sc_key[] = "<!Tv?3^/";` | [id_counter.cpp:39](../common-tools/linux/main_login/id_counter.cpp#L39) | 图形验证码 ID 的 DES 密钥,一把 key 守整套验证码 |
 | `mail.SetPassword("[已隐去]");` | [SendMailDlg.cpp:87](../common-tools/win/netstat-checker/code/SendMailDlg.cpp#L87) | 唯一一条**外网真实邮箱**口令(键盘对角线乱打)——出于责任已隐去口令与完整邮箱 |
